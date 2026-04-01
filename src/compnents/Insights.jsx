@@ -4,10 +4,10 @@ import { AppContext } from "../context/AppContext";
 export default function Insights() {
   const { transactions } = useContext(AppContext);
 
-  const expenses = transactions.filter((t) => t.type === "expense");
+  const expenses = transactions.filter((transaction) => transaction.type === "expense");
 
   const highest = expenses.reduce(
-    (max, tx) => (tx.amount > (max?.amount || 0) ? tx : max),
+    (max, transaction) => (transaction.amount > (max?.amount || 0) ? transaction : max),
     {}
   );
 

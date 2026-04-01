@@ -4,8 +4,8 @@ import { AppContext } from "../context/AppContext";
 export default function TransactionDetails() {
   const { transactions, filter, setFilter } = useContext(AppContext);
 
-  const filtered = transactions.filter((tx) =>
-    tx.category.toLowerCase().includes(filter.toLowerCase())
+  const sortedTransaction = transactions.filter((resource) =>
+    resource.category.toLowerCase().includes(filter.toLowerCase()),
   );
 
   return (
@@ -13,12 +13,12 @@ export default function TransactionDetails() {
       <input
         placeholder="Search category..."
         className="border p-2 rounded mb-4 w-full bg-slate-300"
-        onChange={(e) => setFilter(e.target.value)}
+        onChange={(event) => setFilter(event.target.value)}
       />
 
       <table className="w-full bg-white shadow rounded-lg">
         <thead>
-          <tr className="bg-gray-100">
+          <tr className="bg-gray-100 ">
             <th className="p-2">Date</th>
             <th>Amount</th>
             <th>Category</th>
@@ -26,13 +26,18 @@ export default function TransactionDetails() {
           </tr>
         </thead>
         <tbody>
-          {filtered.map((tx) => (
-            <tr key={tx.id} className="text-center border-t">
-              <td className="p-2">{tx.date}</td>
-              <td>₹{tx.amount}</td>
-              <td>{tx.category}</td>
-              <td className={tx.type === "income" ? "text-green-500" : "text-red-500"}>
-                {tx.type}
+          {
+          sortedTransaction.map((resource) => (
+            <tr key={resource.id} className="text-center border-t capitalize">
+              <td className="p-2">{resource.date}</td>
+              <td>₹{resource.amount}</td>
+              <td>{resource.category}</td>
+              <td
+                className={
+                  resource.type === "income" ? "text-green-500" : "text-red-500"
+                }
+              >
+                {resource.type}
               </td>
             </tr>
           ))}

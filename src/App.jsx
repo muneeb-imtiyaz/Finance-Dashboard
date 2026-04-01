@@ -5,15 +5,14 @@ import Charts from "./compnents/Charts";
 import TransactionTable from "./compnents/TransactionDetails";
 import RoleSwitcher from "./compnents/RoleSwitcher";
 import Insights from "./compnents/Insights";
-import DarkTheme from "./UI/DarkTheme";
 
 function Dashboard() {
   const { transactions } = useContext(AppContext);
 
-  const income = transactions.filter(t => t.type === "income")
+  const income = transactions.filter((transaction) => transaction.type === "income")
     .reduce((a, b) => a + b.amount, 0);
 
-  const expense = transactions.filter(t => t.type === "expense")
+  const expense = transactions.filter((transaction) => transaction.type === "expense")
     .reduce((a, b) => a + b.amount, 0);
 
   return (

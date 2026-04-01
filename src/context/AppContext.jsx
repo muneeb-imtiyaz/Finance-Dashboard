@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { transactions as mockData } from "../data/MockData";
+import { transactions as mockData } from "../service/MockService";
 
 export const AppContext = createContext();
 
