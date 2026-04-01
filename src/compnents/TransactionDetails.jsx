@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
-export default function TransactionTable() {
+export default function TransactionDetails() {
   const { transactions, filter, setFilter } = useContext(AppContext);
 
   const filtered = transactions.filter((tx) =>
@@ -9,10 +9,10 @@ export default function TransactionTable() {
   );
 
   return (
-    <div className="mt-6">
+    <div className="mt-6 p-4 rounded shadow">
       <input
         placeholder="Search category..."
-        className="border p-2 rounded mb-4 w-full"
+        className="border p-2 rounded mb-4 w-full bg-slate-300"
         onChange={(e) => setFilter(e.target.value)}
       />
 

@@ -5,6 +5,7 @@ import Charts from "./compnents/Charts";
 import TransactionTable from "./compnents/TransactionDetails";
 import RoleSwitcher from "./compnents/RoleSwitcher";
 import Insights from "./compnents/Insights";
+import DarkTheme from "./UI/DarkTheme";
 
 function Dashboard() {
   const { transactions } = useContext(AppContext);
@@ -17,6 +18,7 @@ function Dashboard() {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
+   
       <div className="flex justify-between mb-4">
         <h1 className="text-2xl font-bold">Finance Dashboard</h1>
         <RoleSwitcher />

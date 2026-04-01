@@ -6,7 +6,7 @@ export default function RoleSwitcher() {
 
   return (
     <select
-      className="border p-2 rounded"
+      className="border p-2 rounded bg-amber-400"
       value={role}
       onChange={(e) => setRole(e.target.value)}
     >
