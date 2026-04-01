@@ -28,4 +28,4 @@ Finance Dashboard UI using React + Tailwind
 ## 📌 Author
  * Muneeb Imtiyaz
 
-Muneeb Imtiyaz
+
